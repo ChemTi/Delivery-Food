@@ -27,6 +27,10 @@ const logout = () => {
 	localStorage.removeItem('user')
 }
 
+// const isValid = (user) => {
+// 	return /^[a-zA-Z0-9]+$/.test(user);
+// }
+
 buttonAuth.addEventListener('click', () => {
 	modalAuth.style.display = 'flex';
 } );
@@ -42,13 +46,43 @@ buttonOut.addEventListener('click', () => {
 logInForm.addEventListener('submit', (event) => {
 	event.preventDefault();
 	
-	const user = {
-		login: inputLogin.value,
-		password: inputPassword.value
-	}
+		const user = {
+			login: inputLogin.value,
+			password: inputPassword.value
+		}
 
-	localStorage.setItem('user', JSON.stringify(user))
-	login(user);
+		if (user.login.length <= 0 && user.password.length <= 0) {
+			alert('Пожалуйста	 введите	 логин и пароль!');
+		} else if (user.login.length === 0) {
+			alert('Пожалуйста	 введите	 логин!');
+		} else if (user.password.length === 0) {
+			alert('Пожалуйста	 введите	 пароль!');
+		} else {
+			localStorage.setItem('user', JSON.stringify(user));
+			login(user);
+		}
+
+		// валидация не работает
+		// if (user.login.length <= 0 && user.password.length <= 0) {
+		// 	alert('Пожалуйста	 введите	 логин и пароль!');
+		// } else if (user.login.length === 0) {
+		// 	alert('Пожалуйста	 введите	 логин!');
+		// } else if (user.password.length === 0) {
+		// 	alert('Пожалуйста	 введите	 пароль!');
+		// } else if (isValid === false) {
+		// 	alert('Введен неверный символ');	
+		// } else {
+		// 	localStorage.setItem('user', JSON.stringify(user));
+		// 	login(user);
+		// }
+
+		// другой вариант
+		// if (user.login.length > 0 && user.password.length > 0) {
+		// 	localStorage.setItem('user', JSON.stringify(user))
+		// 	login(user);
+		// } else {
+		// 	alert('Пожалуйста	 введите	 логин и пароль! ');
+		// }
 });
 
 if (localStorage.getItem('user')) {
