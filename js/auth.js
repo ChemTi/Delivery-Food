@@ -77,6 +77,17 @@ logInForm.addEventListener('submit', (event) => {
 		// }
 
 		// другой вариант
+		// if (user.login.trim() === '') {
+		// 	alert('Логин не введен')
+		// } else if (user.password.trim() === '') {
+		// 	alert('Пароль не введен')
+		// } else {
+		// 	localStorage.setItem('user', JSON.stringify(user));
+	
+		// 	login(user);
+		// }
+
+		// другой вариант
 		// if (user.login.length > 0 && user.password.length > 0) {
 		// 	localStorage.setItem('user', JSON.stringify(user))
 		// 	login(user);

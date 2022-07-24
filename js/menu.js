@@ -1,10 +1,10 @@
+const restourant = `food-band`;
+
 const renderItems = (data) => {
-	data.forEach(elem => {
-		console.log(elem);
-	});
+	console.log(data);
 }
 
-fetch('https://test-f9fd4-default-rtdb.firebaseio.com/db/partners.json')
+fetch(`./db/${restourant}.json`)
 	.then((response) => response.json())
 	.then((data) => {
 		renderItems(data);
