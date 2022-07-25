@@ -1,7 +1,9 @@
 const restourant = `food-band`;
 
 const renderItems = (data) => {
-	console.log(data);
+	data.forEach(eleme => {
+		console.log(JSON.stringify(eleme));
+	});
 }
 
 fetch(`./db/${restourant}.json`)

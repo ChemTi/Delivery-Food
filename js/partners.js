@@ -1,6 +1,6 @@
 const renderItems = (data) => {
 	data.forEach(elem => {
-		console.log(elem);
+		console.log(JSON.stringify(elem));
 	});
 }
 
